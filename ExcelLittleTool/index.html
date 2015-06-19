@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Excel Little Tool</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script>
+    $(function () {
+      $('#form').submit(function () {
+
+        // 获取坐标值
+        var address_x = $('#address_x').val();
+        if (!address_x){
+          alert('请输入X坐标');
+        }
+
+        // 如果是字母，则转换
+        if (typeof address_x !== 'number'){
+          address_x = address_x.toUpperCase().charCodeAt() - 64;
+        }
+
+        // 获取文件路径
+        var filePath = $('#file').val();
+        if (!filePath){
+          alert('请选择文件');
+        }
+
+        main(address_x, filePath);
+      })
+    })
+  </script>
+</head>
+<body style="margin: auto; margin-top: 50px; width:80%">
+  <h2>请输入“收件地址”的坐标</h2>
+  <form id="form" class="pure-form pure-form-aligned">
+    <div class="form-group">
+      <input type="text" class="form-control" id="address_x" placeholder="X坐标,数字或者字母">
+    </div>
+    <div class="form-group">
+      <input id="file" type="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "ExcelLittleTool",
+  "version": "0.0.0",
+  "description": "A little tool that parse excel document",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [
+    "excel"
+  ],
+  "author": "Huang JerryC",
+  "license": "ISC",
+  "dependencies": {
+    "china-address": "0.0.1",
+    "node-xlsx": "^0.5.1"
+  },
+  "window": {
+    "toolbar": false,
+    "width": 450,
+    "height": 250
+  }
+}
